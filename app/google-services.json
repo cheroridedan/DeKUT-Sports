@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "207434012307",
+    "project_id": "sportsauthentication-e5ec3",
+    "storage_bucket": "sportsauthentication-e5ec3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:207434012307:android:affc5cddd1c2321a44df66",
+        "android_client_info": {
+          "package_name": "com.dandev.sports"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "207434012307-176rqgtstho4av9t1hjmrutdlhgf5s4i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByJNPxjuX-qFw7czGCHZGHA0ZgmQtBb7M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "207434012307-176rqgtstho4av9t1hjmrutdlhgf5s4i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

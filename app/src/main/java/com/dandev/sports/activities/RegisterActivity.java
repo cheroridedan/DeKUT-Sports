@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.nfc.Tag;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -15,6 +17,8 @@ import android.widget.Toast;
 
 import com.dandev.sports.R;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -102,9 +106,24 @@ public class RegisterActivity extends AppCompatActivity {
 
                     if (task.isSuccessful())
                     {
-                        progressDialog.dismiss();
-                        sendUserToNextActivity();
-                        Toast.makeText(RegisterActivity.this, "Registratiion Successful", Toast.LENGTH_SHORT).show();
+                        mAuth.getCurrentUser().sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+
+                                if (task.isSuccessful())
+                                {
+                                    progressDialog.dismiss();
+                                    sendUserToNextActivity();
+                                    Toast.makeText(RegisterActivity.this, "Registratiion successful, please check your email for verification.", Toast.LENGTH_SHORT).show();
+                                }else
+                                {
+                                    Toast.makeText(RegisterActivity.this, task.getException().getMessage(),  Toast.LENGTH_SHORT).show();
+                                }
+
+                            }
+                        });
+
+
                     }else
                     {
                         progressDialog.dismiss();

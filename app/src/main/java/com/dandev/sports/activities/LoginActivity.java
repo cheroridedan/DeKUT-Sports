@@ -108,9 +108,20 @@ public class LoginActivity extends AppCompatActivity {
 
                     if (task.isSuccessful())
                     {
-                        progressDialog.dismiss();
-                        sendUserToNextActivity();
-                        Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+
+                        if (mAuth.getCurrentUser().isEmailVerified())
+                        {
+                            progressDialog.dismiss();
+                            sendUserToNextActivity();
+                            Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                        }else 
+                        {
+                            progressDialog.dismiss();
+                            Toast.makeText(LoginActivity.this, "Please verify your email", Toast.LENGTH_SHORT).show();
+                        }
+
+
+
 
                     }else
                     {

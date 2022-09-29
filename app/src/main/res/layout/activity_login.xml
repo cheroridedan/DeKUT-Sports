@@ -16,8 +16,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true"
-        tools:layout_editor_absoluteX="-40dp"
-        tools:layout_editor_absoluteY="-16dp">
+        tools:layout_editor_absoluteX="-49dp"
+        tools:layout_editor_absoluteY="16dp">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -29,7 +29,7 @@
                 android:id="@+id/tvlogin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="100dp"
+                android:layout_marginTop="144dp"
                 android:fontFamily="@font/aldrich"
                 android:text="login"
                 android:textColor="@color/white"
@@ -50,7 +50,7 @@
                 android:drawableLeft="@drawable/ic_baseline_email_24"
                 android:drawablePadding="10dp"
                 android:ems="10"
-                android:hint="Email"
+                android:hint="email@gmail.com"
                 android:inputType="textEmailAddress"
                 android:paddingLeft="20dp"
                 android:paddingTop="13dp"
@@ -112,89 +112,66 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Create New Account?"
+                android:text="Create new account?,Sign up"
                 android:textColor="@color/white"
-                android:textSize="20sp"
+                android:textSize="15sp"
+                android:visibility="visible"
                 app:layout_constraintEnd_toEndOf="@+id/btnLogin"
                 app:layout_constraintStart_toStartOf="@+id/btnLogin"
                 app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
 
-            <TextView
-                android:id="@+id/textView12"
+            <Button
+                android:id="@+id/btnVerify"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="OR"
-                android:textColor="@color/white"
-                android:textSize="20sp"
-                android:textStyle="bold"
+                android:layout_marginBottom="48dp"
+                android:text="Verify email!"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@+id/tvlogin"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/createNewAccount" />
-
-            <View
-                android:id="@+id/view6"
-                android:layout_width="0dp"
-                android:layout_height="2dp"
-                android:layout_marginStart="16dp"
-                android:background="@color/white"
-                app:layout_constraintBottom_toBottomOf="@+id/textView12"
-                app:layout_constraintEnd_toEndOf="@+id/btnLogin"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toEndOf="@+id/textView12"
-                app:layout_constraintTop_toBottomOf="@+id/createNewAccount"
-                app:layout_constraintVertical_bias="0.727" />
-
-            <View
-                android:id="@+id/view5"
-                android:layout_width="0dp"
-                android:layout_height="2dp"
-                android:layout_marginEnd="16dp"
-                android:background="@color/white"
-                app:layout_constraintBottom_toBottomOf="@+id/textView12"
-                app:layout_constraintEnd_toStartOf="@+id/textView12"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="@+id/btnLogin"
-                app:layout_constraintTop_toBottomOf="@+id/createNewAccount"
-                app:layout_constraintVertical_bias="0.727" />
-
-            <ImageView
-                android:id="@+id/btnGoogle"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginEnd="16dp"
-                app:layout_constraintBottom_toBottomOf="@+id/btnFacebook"
-                app:layout_constraintEnd_toStartOf="@+id/btnFacebook"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintHorizontal_chainStyle="packed"
-                app:layout_constraintStart_toStartOf="parent"
-                app:srcCompat="@drawable/google" />
-
-            <ImageView
-                android:id="@+id/btnFacebook"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/btnTwitter"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/btnGoogle"
-                app:layout_constraintTop_toBottomOf="@+id/textView12"
-                app:srcCompat="@drawable/facebook" />
-
-            <ImageView
-                android:id="@+id/btnTwitter"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/btnFacebook"
-                app:layout_constraintTop_toTopOf="@+id/btnFacebook"
-                app:srcCompat="@drawable/twitter" />
+                app:layout_constraintStart_toStartOf="parent" />
 
 
+            <!--            <TextView-->
+            <!--                android:id="@+id/textView12"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginTop="16dp"-->
+            <!--                android:text=""-->
+            <!--                android:background="@color/white"-->
+            <!--                android:textColor="@color/white"-->
+            <!--                android:textSize="20sp"-->
+            <!--                android:textStyle="bold"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/createNewAccount" />-->
+
+            <!--            <View-->
+            <!--                android:id="@+id/view6"-->
+            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_height="2dp"-->
+            <!--                android:layout_marginStart="16dp"-->
+            <!--                android:background="@color/white"-->
+            <!--                app:layout_constraintBottom_toBottomOf="@+id/textView12"-->
+            <!--                app:layout_constraintEnd_toEndOf="@+id/btnLogin"-->
+            <!--                app:layout_constraintHorizontal_bias="1.0"-->
+            <!--                app:layout_constraintStart_toEndOf="@+id/textView12"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/createNewAccount"-->
+            <!--                app:layout_constraintVertical_bias="0.727" />-->
+
+            <!--            <View-->
+            <!--                android:id="@+id/view5"-->
+            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_height="2dp"-->
+            <!--                android:layout_marginEnd="16dp"-->
+            <!--                android:background="@color/white"-->
+            <!--                app:layout_constraintBottom_toBottomOf="@+id/textView12"-->
+            <!--                app:layout_constraintEnd_toStartOf="@+id/textView12"-->
+            <!--                app:layout_constraintHorizontal_bias="1.0"-->
+            <!--                app:layout_constraintStart_toStartOf="@+id/btnLogin"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/createNewAccount"-->
+            <!--                app:layout_constraintVertical_bias="0.727" />-->
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

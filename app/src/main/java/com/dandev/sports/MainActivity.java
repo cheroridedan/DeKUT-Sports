@@ -8,16 +8,21 @@ import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.dandev.sports.activities.LoginActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
 
     Toolbar toolbar;
+    FirebaseAuth mAuth;
     BottomNavigationView bottomNavigationView;
     AppBarConfiguration appBarConfiguration;
 
@@ -29,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         toolbar = findViewById(R.id.toolbar);
+        mAuth= FirebaseAuth.getInstance();
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("");
 
@@ -45,19 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
-
-
-
         NavigationUI.setupWithNavController(bottomNavigationView,navController);
-
-
-
-
-
-
-
-
 
 
 
@@ -76,8 +70,13 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()){
 
             case R.id.ic_logout:
-                Toast.makeText(this, "logout clicked", Toast.LENGTH_SHORT).show();
+                mAuth.signOut();
+                finish();
+                Toast.makeText(this, "You are logged out", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(intent);
                 break;
+
             case R.id.ic_setting:
                 Toast.makeText(this, "setting clicked", Toast.LENGTH_SHORT).show();
                 break;

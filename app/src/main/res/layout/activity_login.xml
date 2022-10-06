@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login"
+    android:background="@drawable/bg_login"
     tools:context=".MainActivity">
 
     <View
@@ -91,7 +91,6 @@
                 android:layout_marginTop="16dp"
                 android:text="Forgot Password?"
                 android:textColor="@color/white"
-                android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="@+id/inputPassword"
                 app:layout_constraintTop_toBottomOf="@+id/inputPassword" />
 
@@ -111,12 +110,12 @@
                 android:id="@+id/createNewAccount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Create new account?,Sign up"
+                android:layout_marginTop="24dp"
+                android:text="Sign up"
                 android:textColor="@color/white"
-                android:textSize="15sp"
                 android:visibility="visible"
                 app:layout_constraintEnd_toEndOf="@+id/btnLogin"
+                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="@+id/btnLogin"
                 app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
 

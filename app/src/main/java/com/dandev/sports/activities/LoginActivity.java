@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -16,10 +17,14 @@ import android.widget.Toast;
 import com.dandev.sports.MainActivity;
 import com.dandev.sports.R;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -32,6 +37,7 @@ public class LoginActivity extends AppCompatActivity {
 
     FirebaseAuth mAuth;
     FirebaseUser mUser;
+    FirebaseFirestore fStore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +57,7 @@ public class LoginActivity extends AppCompatActivity {
         progressDialog=new ProgressDialog(this);
         mAuth=FirebaseAuth.getInstance();
         mUser=mAuth.getCurrentUser();
+        fStore = FirebaseFirestore.getInstance();
 
 
         forgotPassword.setOnClickListener(new View.OnClickListener() {
@@ -112,8 +119,11 @@ public class LoginActivity extends AppCompatActivity {
                         if (mAuth.getCurrentUser().isEmailVerified())
                         {
                             progressDialog.dismiss();
-                            sendUserToNextActivity();
+                        
+
                             Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+
+                            checKUserRole(mAuth.getCurrentUser().getUid());
                         }else 
                         {
                             progressDialog.dismiss();
@@ -135,12 +145,37 @@ public class LoginActivity extends AppCompatActivity {
         }
 
     }
+
+    private void checKUserRole(String uid) {
+
+        DocumentReference df = fStore.collection("Users").document(uid);
+        df.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                Log.d("TAG", "onSuccess: " + documentSnapshot.getData());
+                if (documentSnapshot.getString("isAdmin") != null){
+                    startActivity(new Intent(LoginActivity.this,AdminActivity.class));
+                }
+
+                if (documentSnapshot.getString("isUser") != null){
+                    startActivity(new Intent(LoginActivity.this,MainActivity.class));
+                }
+
+
+            }
+        });
+
+
+    }
+/*
+
     private void sendUserToNextActivity() {
 
         Intent intent=new Intent(LoginActivity.this, MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
+*/
 
 
 

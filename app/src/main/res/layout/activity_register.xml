@@ -16,8 +16,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true"
-        tools:layout_editor_absoluteX="-40dp"
-        tools:layout_editor_absoluteY="-16dp">
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="47dp">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -110,7 +110,7 @@
                 android:id="@+id/btnRegister"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="24dp"
                 android:background="@drawable/input_bg"
                 android:text="Register"
                 android:textColor="@color/white"
@@ -123,13 +123,35 @@
                 android:id="@+id/alreadyHaveAnAccount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Already Have An Account?"
+                android:layout_marginTop="24dp"
+                android:text="Sign in"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="@+id/btnRegister"
+                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="@+id/btnRegister"
                 app:layout_constraintTop_toBottomOf="@+id/btnRegister" />
+
+            <EditText
+                android:id="@+id/etName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:background="@drawable/input_bg"
+                android:drawableLeft="@drawable/ic_person"
+                android:drawablePadding="10dp"
+                android:hint="Full Name"
+                android:paddingTop="13dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="13dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                app:layout_constraintBottom_toTopOf="@+id/inputEmail"
+                app:layout_constraintEnd_toEndOf="@+id/inputEmail"
+                app:layout_constraintStart_toStartOf="@+id/inputEmail"
+                app:layout_constraintTop_toBottomOf="@+id/tvlogin" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

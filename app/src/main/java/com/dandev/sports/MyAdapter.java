@@ -41,10 +41,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
         Games games = list.get(position);
-        Log.d("TAG", "onBindViewHolder: " + games.getGameTitle());
+
         holder.gameName.setText(games.getGameTitle());
         holder.gameVenue.setText(games.getVenue());
         holder.gameTeams.setText(games.getTeams());
+        holder.gameDate.setText(games.getDate());
 
 
 
@@ -53,12 +54,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     @Override
     public int getItemCount() {
+
         return list.size();
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
 
-        TextView gameName,gameVenue,gameTeams,gameTeamB;
+        TextView gameName,gameVenue,gameTeams,gameDate;
 
 
         public MyViewHolder(@NonNull View itemView) {
@@ -68,7 +70,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             gameName = itemView.findViewById(R.id.displayFootball);
             gameVenue = itemView.findViewById(R.id.displayVenue);
             gameTeams = itemView.findViewById(R.id.displayTeams);
-            gameTeamB = itemView.findViewById(R.id.displayTeamB);
+            gameDate = itemView.findViewById(R.id.displayDate);
 
 
         }

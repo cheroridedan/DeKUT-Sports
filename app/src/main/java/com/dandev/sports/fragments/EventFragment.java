@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -30,6 +31,8 @@ public class EventFragment extends Fragment {
     DatabaseReference databaseReference;
     MyAdapter myAdapter;
     ArrayList<Games> list;
+
+
 
 
 
@@ -61,6 +64,8 @@ public class EventFragment extends Fragment {
         recyclerView.setAdapter(myAdapter);
 
 
+
+
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -70,6 +75,7 @@ public class EventFragment extends Fragment {
 
 
                     list.add(games);
+
                 }
 
                 myAdapter.notifyDataSetChanged();

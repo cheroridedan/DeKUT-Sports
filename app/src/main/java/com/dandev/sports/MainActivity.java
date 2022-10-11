@@ -24,7 +24,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity  {
 
-    CardView postEvent;
+
     Toolbar toolbar;
     FirebaseAuth mAuth;
     BottomNavigationView bottomNavigationView;

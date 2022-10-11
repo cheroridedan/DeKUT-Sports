@@ -81,7 +81,10 @@
                 android:id="@+id/gameTime"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Date and Time" />
+                android:drawableRight="@drawable/ic_calendar"
+                android:focusable="false"
+                android:hint="Select Date"
+                />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout

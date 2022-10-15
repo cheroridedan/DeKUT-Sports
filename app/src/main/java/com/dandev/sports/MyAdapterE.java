@@ -9,12 +9,18 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.dandev.sports.activities.EditActivity;
 import com.dandev.sports.model.Activity;
 import com.dandev.sports.model.Event;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.orhanobut.dialogplus.DialogPlus;
@@ -30,8 +36,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class MyAdapterE extends RecyclerView.Adapter<MyAdapterE.MyViewHolder> {
     Context context;
     ArrayList<Activity> activityArrayList;
-    DatabaseReference reference;
-//    ActivityUpdateDataBinding binding;
+
 
     public MyAdapterE(Context context, ArrayList<Activity> activityArrayList) {
         this.context = context;
@@ -48,6 +53,7 @@ public class MyAdapterE extends RecyclerView.Adapter<MyAdapterE.MyViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+
 
         Activity activity = activityArrayList.get(position);
 
@@ -68,7 +74,6 @@ public class MyAdapterE extends RecyclerView.Adapter<MyAdapterE.MyViewHolder> {
                         .create();
 
 
-
                 View view1 = dialogPlus.getHolderView();
 
                 EditText name = view1.findViewById(R.id.edGameName);
@@ -83,18 +88,12 @@ public class MyAdapterE extends RecyclerView.Adapter<MyAdapterE.MyViewHolder> {
                 teams.setText(activity.getTeams());
                 date.setText(activity.getDate());
 
-                dialogPlus.show();
-
                 btnUpdate.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
 
-
-
-
-
-
                         Map<String, Object> map = new HashMap<>();
+
                         map.put("gameTitle",name.getText().toString());
                         map.put("venue",venue.getText().toString());
                         map.put("teams",teams.getText().toString());
@@ -102,15 +101,39 @@ public class MyAdapterE extends RecyclerView.Adapter<MyAdapterE.MyViewHolder> {
 
 
 
+                        FirebaseDatabase.getInstance().getReference().child("Events")
+                                .child(activity.getNumber()).getRef()
+                                .updateChildren(map)
+                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void unused) {
+                                        Toast.makeText(holder.gameName.getContext(), "Data updated successfully.", Toast.LENGTH_SHORT).show();
+                                        dialogPlus.dismiss();
+                                        ((EditActivity)context).finish();
+
+                                    }
+
+                                })
+                                .addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        Toast.makeText(holder.gameName.getContext(), "Error while updating.", Toast.LENGTH_SHORT).show();
+                                        dialogPlus.dismiss();
 
 
+                                    }
+                                });
 
 
 
                     }
                 });
 
+                dialogPlus.show();
+
+
             }
+
         });
 
     }
@@ -126,6 +149,7 @@ public class MyAdapterE extends RecyclerView.Adapter<MyAdapterE.MyViewHolder> {
 
         TextView gameName,gameVenue,gameTeams,gameDate;
         Button btnEdit;
+
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);

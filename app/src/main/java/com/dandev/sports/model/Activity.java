@@ -5,16 +5,16 @@ public class Activity {
     String date;
     String venue;
     String teams;
-    String uniqueKey;
+    String number;
 
     public Activity(){}
 
-    public Activity(String gameTitle, String date, String venue, String teams, String uniqueKey) {
+    public Activity(String gameTitle, String date, String venue, String teams, String number) {
         this.gameTitle = gameTitle;
         this.date = date;
         this.venue = venue;
         this.teams = teams;
-        this.uniqueKey = uniqueKey;
+        this.number = number;
     }
 
     public String getGameTitle() {
@@ -49,11 +49,11 @@ public class Activity {
         this.teams = teams;
     }
 
-    public String getUniqueKey() {
-        return uniqueKey;
+    public String getNumber() {
+        return number;
     }
 
-    public void setUniqueKey(String uniqueKey) {
-        this.uniqueKey = uniqueKey;
+    public void setNumber(String number) {
+        this.number = number;
     }
 }

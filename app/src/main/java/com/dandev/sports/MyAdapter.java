@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.dandev.sports.model.Games;
+import com.google.firebase.database.DatabaseReference;
 
 import java.util.ArrayList;
 
@@ -73,8 +74,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             gameDate = itemView.findViewById(R.id.displayDate);
 
 
+
+
         }
     }
+
 
 
 }

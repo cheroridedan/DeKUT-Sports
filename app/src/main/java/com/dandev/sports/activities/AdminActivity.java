@@ -22,7 +22,7 @@ public class AdminActivity extends AppCompatActivity implements View.OnClickList
 
 
     Toolbar toolbar;
-    CardView addPost,editEvent;
+    CardView addPost,editEvent,deleteEvent;
     FirebaseAuth mAuth;
 
 
@@ -34,6 +34,7 @@ public class AdminActivity extends AppCompatActivity implements View.OnClickList
         toolbar = findViewById(R.id.toolbar);
         addPost=findViewById(R.id.addEvent);
         editEvent=findViewById(R.id.editEvent);
+        deleteEvent=findViewById(R.id.deleteEvent);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Admin Panel");
 
@@ -42,6 +43,7 @@ public class AdminActivity extends AppCompatActivity implements View.OnClickList
 
         addPost.setOnClickListener(this);
         editEvent.setOnClickListener(this);
+        deleteEvent.setOnClickListener(this);
 
 
 
@@ -88,6 +90,11 @@ public class AdminActivity extends AppCompatActivity implements View.OnClickList
 
             case R.id.editEvent:
                 intent = new Intent(AdminActivity.this,EditActivity.class);
+                startActivity(intent);
+                break;
+
+            case R.id.deleteEvent:
+                intent = new Intent(AdminActivity.this,DeleteActivity.class);
                 startActivity(intent);
                 break;
         }

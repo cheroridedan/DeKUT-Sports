@@ -6,8 +6,8 @@
     app:cardElevation="8dp"
     app:cardCornerRadius="8dp"
     app:cardBackgroundColor="@color/green"
-    android:layout_margin="16dp"
-    >
+    android:layout_margin="16dp">
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -124,6 +124,7 @@
                 android:textSize="20sp"
                 android:textStyle="bold"/>
 
+
         </LinearLayout>
 
         <LinearLayout
@@ -135,19 +136,19 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/btnEnroll"
+                android:id="@+id/btnDelete"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Enroll"
-                android:textColor="@color/white"
+                android:text="Delete"
+                android:textColor="@color/red"
                 android:textStyle="bold"
                 android:textAllCaps="false" />
 
         </LinearLayout>
 
 
-    </LinearLayout>
 
+    </LinearLayout>
 
 
 

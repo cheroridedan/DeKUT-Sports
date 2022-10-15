@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -22,11 +21,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-import com.wdullaer.materialdatetimepicker.time.RadialPickerLayout;
 
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.regex.Pattern;
 
 public class AddActivity extends AppCompatActivity {
 
@@ -129,7 +125,7 @@ public class AddActivity extends AppCompatActivity {
     private void postData() {
 
         reference=reference.child("Events");
-        final String uniqueKey = reference.push().getKey();
+        final String number = reference.push().getKey();
 
         String eventTitle = gameTitle.getText().toString();
         String eventVenue = gameVenue.getText().toString();
@@ -138,16 +134,9 @@ public class AddActivity extends AppCompatActivity {
 
 
 
+        Event event = new Event(eventTitle,eventTime,eventVenue, eventTeam,number);
 
-
-
-
-
-
-
-        Event event = new Event(eventTitle,eventTime,eventVenue, eventTeam,uniqueKey);
-
-        reference.child(uniqueKey).setValue(event).addOnSuccessListener(new OnSuccessListener<Void>() {
+        reference.child(number).setValue(event).addOnSuccessListener(new OnSuccessListener<Void>() {
 
 
 

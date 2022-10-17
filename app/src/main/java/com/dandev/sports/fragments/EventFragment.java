@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.dandev.sports.MyAdapter;
 import com.dandev.sports.R;
@@ -28,6 +29,7 @@ import java.util.ArrayList;
 public class EventFragment extends Fragment {
 
     RecyclerView recyclerView;
+    Button btnJoin;
     DatabaseReference databaseReference;
     MyAdapter myAdapter;
     ArrayList<Games> list;
@@ -36,9 +38,14 @@ public class EventFragment extends Fragment {
 
 
 
+
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
 
 
 
@@ -53,6 +60,8 @@ public class EventFragment extends Fragment {
 
 
         View view = inflater.inflate(R.layout.fragment_event, container, false);
+
+
 
         recyclerView  = view.findViewById(R.id.games);
         databaseReference = FirebaseDatabase.getInstance().getReference().child("Events");

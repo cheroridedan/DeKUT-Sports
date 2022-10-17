@@ -98,7 +98,7 @@ public class RegisterActivity extends AppCompatActivity {
         String email = inputEmail.getText().toString();
         String name = inputName.getText().toString().trim();
         String password = inputPassword.getText().toString();
-        String confirmpassword = inputConfirmPassword.getText().toString();
+        String confirmPassword= inputConfirmPassword.getText().toString();
 
 
         if (name.isEmpty()) {
@@ -110,7 +110,7 @@ public class RegisterActivity extends AppCompatActivity {
         else if (password.isEmpty() || password.length() < 6) {
             inputPassword.setError("Enter Proper Password.");
 
-        } else if (!password.equals(confirmpassword)) {
+        } else if (!password.equals(confirmPassword)) {
             inputConfirmPassword.setError("Password Not Match Both Fields");
         } else {
             progressDialog.setMessage("Please Wait For Registration...");

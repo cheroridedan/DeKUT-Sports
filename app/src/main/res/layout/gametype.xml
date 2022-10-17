@@ -135,13 +135,13 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/btnEnroll"
+                android:id="@+id/btnJoin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Enroll"
+                android:text="Join"
+                android:textAllCaps="false"
                 android:textColor="@color/white"
-                android:textStyle="bold"
-                android:textAllCaps="false" />
+                android:textStyle="bold" />
 
         </LinearLayout>
 

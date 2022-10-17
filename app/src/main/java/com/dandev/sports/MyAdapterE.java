@@ -119,6 +119,7 @@ public class MyAdapterE extends RecyclerView.Adapter<MyAdapterE.MyViewHolder> {
                                     public void onFailure(@NonNull Exception e) {
                                         Toast.makeText(holder.gameName.getContext(), "Error while updating.", Toast.LENGTH_SHORT).show();
                                         dialogPlus.dismiss();
+                                        ((EditActivity)context).finish();
 
 
                                     }

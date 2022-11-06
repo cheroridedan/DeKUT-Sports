@@ -9,16 +9,23 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/sports/app/src/main/res/drawable/rounded.xml" value="0.1435" />
         <entry key="..\:/Users/user/AndroidStudioProjects/sports/app/src/main/res/layout/activity_add.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/user/AndroidStudioProjects/sports/app/src/main/res/layout/activity_admin.xml" value="0.22" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/sports/app/src/main/res/layout/activity_athlethics.xml" value="0.21041666666666667" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/sports/app/src/main/res/layout/activity_basketball.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/sports/app/src/main/res/layout/activity_delete.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/user/AndroidStudioProjects/sports/app/src/main/res/layout/activity_edit.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/sports/app/src/main/res/layout/activity_edit_profile.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/sports/app/src/main/res/layout/activity_football.xml" value="0.22" />
         <entry key="..\:/Users/user/AndroidStudioProjects/sports/app/src/main/res/layout/activity_forgot_password.xml" value="0.22" />
         <entry key="..\:/Users/user/AndroidStudioProjects/sports/app/src/main/res/layout/activity_games.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/user/AndroidStudioProjects/sports/app/src/main/res/layout/activity_home.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/user/AndroidStudioProjects/sports/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/sports/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/sports/app/src/main/res/layout/activity_recreational.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/sports/app/src/main/res/layout/activity_register.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/sports/app/src/main/res/layout/activity_rugby.xml" value="0.21041666666666667" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/sports/app/src/main/res/layout/activity_volleyball.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/sports/app/src/main/res/layout/edit.xml" value="0.23541666666666666" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/sports/app/src/main/res/layout/fragment_event.xml" value="0.33" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/sports/app/src/main/res/layout/fragment_event.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/sports/app/src/main/res/layout/fragment_home.xml" value="0.22" />
         <entry key="..\:/Users/user/AndroidStudioProjects/sports/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/sports/app/src/main/res/layout/gametype.xml" value="0.22447916666666667" />

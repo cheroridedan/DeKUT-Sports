@@ -29,24 +29,14 @@ import java.util.ArrayList;
 public class EventFragment extends Fragment {
 
     RecyclerView recyclerView;
-    Button btnJoin;
     DatabaseReference databaseReference;
     MyAdapter myAdapter;
     ArrayList<Games> list;
 
 
-
-
-
-
-
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
-
 
 
     }

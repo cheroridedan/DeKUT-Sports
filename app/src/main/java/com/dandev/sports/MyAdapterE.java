@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -38,18 +39,24 @@ public class MyAdapterE extends RecyclerView.Adapter<MyAdapterE.MyViewHolder> {
     ArrayList<Activity> activityArrayList;
 
 
+
+
     public MyAdapterE(Context context, ArrayList<Activity> activityArrayList) {
         this.context = context;
         this.activityArrayList = activityArrayList;
+
     }
 
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+
+
         View v  = LayoutInflater.from(context).inflate(R.layout.item,parent,false);
         return new MyViewHolder(v);
 
     }
+
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
@@ -152,6 +159,7 @@ public class MyAdapterE extends RecyclerView.Adapter<MyAdapterE.MyViewHolder> {
         Button btnEdit;
 
 
+
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
@@ -160,7 +168,14 @@ public class MyAdapterE extends RecyclerView.Adapter<MyAdapterE.MyViewHolder> {
             gameTeams = itemView.findViewById(R.id.displayTeams);
             gameDate = itemView.findViewById(R.id.displayDate);
 
+
+
             btnEdit = itemView.findViewById(R.id.btnEdit);
+
+
         }
+
+
     }
+
 }

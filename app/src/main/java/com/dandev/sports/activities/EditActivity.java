@@ -10,6 +10,8 @@ import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.provider.CalendarContract;
 import android.util.Log;
+import android.view.View;
+import android.widget.ProgressBar;
 
 import com.dandev.sports.MyAdapterE;
 import com.dandev.sports.R;
@@ -34,6 +36,7 @@ public class EditActivity extends AppCompatActivity {
     DatabaseReference databaseReference;
     MyAdapterE myAdapterE;
     ArrayList<Activity> activityArrayList;
+    ProgressBar progressBar;
 
 
 
@@ -42,6 +45,8 @@ public class EditActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit);
+
+        progressBar = new ProgressBar(this);
 
 
 
@@ -55,17 +60,26 @@ public class EditActivity extends AppCompatActivity {
 
         recyclerView.setAdapter(myAdapterE);
 
+
+
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot dataSnapshot : snapshot.getChildren())
                 {
+
                     Activity activity = dataSnapshot.getValue(Activity.class);
                     activityArrayList.add(activity);
+                    progressBar.setVisibility(View.GONE);
+
+
+
+
 
                 }
 
                 myAdapterE.notifyDataSetChanged();
+
 
             }
 
@@ -75,6 +89,8 @@ public class EditActivity extends AppCompatActivity {
 
             }
         });
+
+
 
 
     }

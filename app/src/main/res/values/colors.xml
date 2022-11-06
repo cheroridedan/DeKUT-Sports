@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#5E2E98</color>
-    <color name="purple_500">#3540A7</color>
+    <color name="purple_200">#7244AA</color>
+    <color name="purple_500">#555CA5</color>
     <color name="greenrugby">#00643f</color>
     <color name="green">#F22E9848</color>
     <color name="black_basketball">#A24343</color>
-    <color name="volleyball">#0044ff</color>
+    <color name="volleyball">#506AB3</color>
     <color name="purple_700">#00688B</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="hockey">#7FA0BA</color>
-    <color name="dark_blue">#3023AE</color>
+    <color name="dark_blue">#4E4791</color>
     <color name="purple">#c86dd7</color>
     <color name="light_gray">#c1c1c1</color>
     <color name="red">#ff0000</color>
     <color name="light_blue">#9DD9F3</color>
+    <color name="grey">#F3EEEE</color>
 
 
     <color name="login1">#ccffffff</color>

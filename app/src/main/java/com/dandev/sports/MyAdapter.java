@@ -79,7 +79,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public static class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         TextView gameName,gameVenue,gameTeams,gameDate;
-        Button btnJoin;
+        Button btnJoin, update;
         EditText edRegNo, edPhoneNumber, edGender, edGame, edCategory;
 
         FirebaseDatabase db = FirebaseDatabase.getInstance();
@@ -104,7 +104,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
             btnJoin  = itemView.findViewById(R.id.btnJoin);
 
+
             btnJoin.setOnClickListener(this);
+
+
 
 
 

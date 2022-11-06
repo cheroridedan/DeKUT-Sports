@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,6 +27,7 @@ public class AdminActivity extends AppCompatActivity implements View.OnClickList
     FirebaseAuth mAuth;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +39,7 @@ public class AdminActivity extends AppCompatActivity implements View.OnClickList
         deleteEvent=findViewById(R.id.deleteEvent);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Admin Panel");
+
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -89,6 +92,7 @@ public class AdminActivity extends AppCompatActivity implements View.OnClickList
                 break;
 
             case R.id.editEvent:
+
                 intent = new Intent(AdminActivity.this,EditActivity.class);
                 startActivity(intent);
                 break;
@@ -97,7 +101,12 @@ public class AdminActivity extends AppCompatActivity implements View.OnClickList
                 intent = new Intent(AdminActivity.this,DeleteActivity.class);
                 startActivity(intent);
                 break;
+
+            default:break;
         }
 
     }
+
+
+
 }

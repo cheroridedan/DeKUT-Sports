@@ -16,6 +16,24 @@
         android:theme="@style/Theme.Sports"
         tools:targetApi="31">
         <activity
+            android:name=".activities.RecreationalActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.VolleyballActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.AthlethicsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.RugbyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.BasketballActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.FootballActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.DeleteActivity"
             android:exported="false" />
         <activity

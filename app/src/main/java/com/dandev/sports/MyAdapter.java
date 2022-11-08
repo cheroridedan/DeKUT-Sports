@@ -2,6 +2,7 @@ package com.dandev.sports;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -17,6 +18,10 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.dandev.sports.activities.EditActivity;
+import com.dandev.sports.activities.FootballActivity;
+import com.dandev.sports.activities.ForgotPasswordActivity;
+import com.dandev.sports.activities.LoginActivity;
+import com.dandev.sports.activities.Payment;
 import com.dandev.sports.model.Games;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -79,7 +84,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public static class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         TextView gameName,gameVenue,gameTeams,gameDate;
-        Button btnJoin, update;
+        Button btnJoin, btnPay;
         EditText edRegNo, edPhoneNumber, edGender, edGame, edCategory;
 
         FirebaseDatabase db = FirebaseDatabase.getInstance();
@@ -103,13 +108,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             gameDate = itemView.findViewById(R.id.displayDate);
 
             btnJoin  = itemView.findViewById(R.id.btnJoin);
+            btnPay  = itemView.findViewById(R.id.btnPay);
 
 
             btnJoin.setOnClickListener(this);
-
-
-
-
+            btnPay.setOnClickListener(this);
 
 
         }
@@ -117,6 +120,17 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
         @Override
         public void onClick(View view) {
+
+
+
+            btnPay.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent =  new Intent(context, Payment.class);
+                    context.startActivity(intent);
+
+                }
+            });
 
             showDialog(view);
         }
@@ -171,8 +185,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                     }else {
                         edRegNo.setError("Enter Valid Reg. No.");
                     }
-
-
 
                 }
             });

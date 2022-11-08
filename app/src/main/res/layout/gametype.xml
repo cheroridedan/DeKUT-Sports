@@ -138,11 +138,12 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="16dp"
-            android:layout_marginLeft="100dp"
+            android:layout_marginLeft="0dp"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/btnJoin"
+                android:layout_marginRight="100dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Join"
@@ -150,7 +151,18 @@
                 android:textColor="@color/white"
                 android:textStyle="bold" />
 
+            <Button
+                android:id="@+id/btnPay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pay"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
         </LinearLayout>
+
+
 
 
     </LinearLayout>

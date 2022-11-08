@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.Payment">
+
+    <TextView
+        android:id="@+id/paymentdetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Payment Details"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/mpesa"
+        android:layout_below="@id/paymentdetails"
+        android:id="@+id/mpesaLogo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/paymentamount"
+        android:layout_width="353dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="20dp"
+        android:text="Input amount"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:layout_below="@id/mpesaLogo"
+        />
+
+    <EditText
+        android:id="@+id/etAmount"
+        android:layout_width="356dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="8dp"
+        android:ems="10"
+        android:hint="Amount to pay"
+        android:inputType="number"
+        android:layout_below="@id/paymentamount"
+        />
+
+    <TextView
+        android:id="@+id/paymentPhone"
+        android:layout_width="353dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@id/etAmount"
+        android:text="Payment Phone"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        />
+
+    <EditText
+        android:id="@+id/etPhone"
+        android:layout_width="353dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="20dp"
+        android:ems="10"
+        android:hint="+254701234568"
+        android:inputType="phone"
+        android:layout_below="@id/paymentPhone" />
+
+
+    <Button
+        android:id="@+id/btnPay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pay Now"
+        android:layout_below="@id/etPhone"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>

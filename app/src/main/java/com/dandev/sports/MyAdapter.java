@@ -1,33 +1,23 @@
 package com.dandev.sports;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.dandev.sports.activities.EditActivity;
-import com.dandev.sports.activities.FootballActivity;
-import com.dandev.sports.activities.ForgotPasswordActivity;
-import com.dandev.sports.activities.LoginActivity;
 import com.dandev.sports.activities.Payment;
 import com.dandev.sports.model.Games;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.orhanobut.dialogplus.DialogPlus;
@@ -81,6 +71,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         return list.size();
     }
 
+
+
+
+
     public static class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         TextView gameName,gameVenue,gameTeams,gameDate;
@@ -110,18 +104,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             btnJoin  = itemView.findViewById(R.id.btnJoin);
             btnPay  = itemView.findViewById(R.id.btnPay);
 
-
-            btnJoin.setOnClickListener(this);
             btnPay.setOnClickListener(this);
-
-
-        }
-
-
-        @Override
-        public void onClick(View view) {
-
-
+            btnJoin.setOnClickListener(this);
 
             btnPay.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -132,6 +116,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                 }
             });
 
+
+
+        }
+
+
+        @Override
+        public void onClick(View view) {
             showDialog(view);
         }
 
@@ -146,8 +137,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             edGender = view1.findViewById(R.id.edGender);
             edGame = view1.findViewById(R.id.edGame);
             edCategory = view1.findViewById(R.id.edCategory);
-
-
 
 
             Button btnJoinEvent = view1.findViewById(R.id.btnJoinEvent);
@@ -231,11 +220,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
                 }
             });
-
-
-
-
-
 
         }
 

@@ -83,6 +83,10 @@
         android:layout_height="35dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
+        android:focusable="false"
+        android:paddingRight="100dp"
+        android:paddingLeft="80dp"
+        android:drawableRight="@drawable/ic_calendar"
         android:background="@drawable/rounded"
         android:gravity="center"/>
 
@@ -93,8 +97,7 @@
         android:textAllCaps="false"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
-        android:textSize="21dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/rounded"
         android:gravity="center"
         android:id="@+id/btnUpdate"/>

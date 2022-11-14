@@ -1,5 +1,6 @@
 package com.dandev.sports;
 
+import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.util.Log;
@@ -7,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -15,6 +17,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.dandev.sports.activities.AddActivity;
 import com.dandev.sports.activities.EditActivity;
 import com.dandev.sports.model.Activity;
 import com.dandev.sports.model.Event;
@@ -29,6 +32,7 @@ import com.orhanobut.dialogplus.ViewHolder;
 
 import java.security.AccessController;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -37,6 +41,8 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class MyAdapterE extends RecyclerView.Adapter<MyAdapterE.MyViewHolder> {
     Context context;
     ArrayList<Activity> activityArrayList;
+    DatePickerDialog picker;
+
 
 
 
@@ -89,11 +95,41 @@ public class MyAdapterE extends RecyclerView.Adapter<MyAdapterE.MyViewHolder> {
                 EditText date = view1.findViewById(R.id.edDate);
 
                 Button btnUpdate = view1.findViewById(R.id.btnUpdate);
+                EditText edDate = view1.findViewById(R.id.edDate);
 
                 name.setText(activity.getGameTitle());
                 venue.setText(activity.getVenue());
                 teams.setText(activity.getTeams());
                 date.setText(activity.getDate());
+
+                edDate.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        final Calendar calendar = Calendar.getInstance();
+                        int day = calendar.get(Calendar.DAY_OF_MONTH);
+                        int month = calendar.get(Calendar.MONTH);
+                        int year = calendar.get(Calendar.YEAR);
+
+                        picker = new DatePickerDialog(edDate.getContext(), new DatePickerDialog.OnDateSetListener() {
+                            @Override
+                            public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
+                                edDate.setText(datePicker.getDayOfMonth() + "/" + (datePicker.getMonth()+ 1) + "/" + datePicker.getYear());
+
+
+                                if (edDate.getText().toString().isEmpty())
+                                {
+                                    edDate.setError("Enter Date");
+                                    edDate.requestFocus();
+                                }
+
+
+
+                            }
+                        }, year, month, day);
+                        picker.show();
+
+                    }
+                });
 
                 btnUpdate.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -144,6 +180,8 @@ public class MyAdapterE extends RecyclerView.Adapter<MyAdapterE.MyViewHolder> {
 
         });
 
+
+
     }
 
     @Override
@@ -168,9 +206,9 @@ public class MyAdapterE extends RecyclerView.Adapter<MyAdapterE.MyViewHolder> {
             gameTeams = itemView.findViewById(R.id.displayTeams);
             gameDate = itemView.findViewById(R.id.displayDate);
 
-
-
             btnEdit = itemView.findViewById(R.id.btnEdit);
+
+
 
 
         }

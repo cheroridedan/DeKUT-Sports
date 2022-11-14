@@ -42,23 +42,10 @@ import timber.log.Timber;
 public class Payment extends AppCompatActivity implements View.OnClickListener {
 
 
-    public static final String college = "college";
-    public static final String email = "email";
-    public static final String gender = "gender";
-    public static final String studentid = "studentid";
-    public static final String course = "course";
-    public static final String fname = "fname";
-    public static final String lname = "lname";
-    public static final String year = "year";
-    public static final String passport = "passport";
-    public static final String ntnId = "ntnId";
-    public static final String SchId = "SchId";
-    public static final String chiefLetter = "chiefLetter";
-    public static final String uniLetter = "uniLetter";
 
     private DarajaApiClient mApiClient;
     private ProgressDialog mProgressDialog;
-    private String collegee, emaill, genderr, studentidd, coursee, fnamee, lnamee, yearr, passportt, ntnIdd, SchIdd, chiefLetterr, uniLetterr;
+
 
     DatabaseReference databaseReference;
 
@@ -84,20 +71,7 @@ public class Payment extends AppCompatActivity implements View.OnClickListener {
 
         databaseReference= FirebaseDatabase.getInstance().getReference();
 
-        Intent i = getIntent();
-        collegee = i.getStringExtra(college);
-        emaill = i.getStringExtra(email);
-        genderr = i.getStringExtra(gender);
-        //studentidd = i.getStringExtra(studentid);
-        coursee = i.getStringExtra(course);
-        fnamee = i.getStringExtra(fname);
-        lnamee = i.getStringExtra(lname);
-        yearr = i.getStringExtra(year);
-        passportt = i.getStringExtra(passport);
-        ntnIdd = i.getStringExtra(ntnId);
-        SchIdd = i.getStringExtra(SchId);
-        chiefLetterr = i.getStringExtra(chiefLetter);
-        uniLetterr = i.getStringExtra(uniLetter);
+
 
     }
 
@@ -129,22 +103,12 @@ public class Payment extends AppCompatActivity implements View.OnClickListener {
 
             String id = databaseReference.push().getKey();
             HashMap<String, Object> hashMap = new HashMap<>();
-            hashMap.put("Passport", passportt);
-            hashMap.put("fName", fnamee);
-            hashMap.put("lName", lnamee);
-            hashMap.put("gender", genderr);
-            hashMap.put("Sponsor_no", phone_number);
-            hashMap.put("Amount", amount);
-            hashMap.put("college",collegee);
-            hashMap.put("course", coursee);
-            hashMap.put("email", emaill);
-            hashMap.put("year", yearr);
-            hashMap.put("National_id",ntnIdd);
-            hashMap.put("School_id", SchIdd);
-            hashMap.put("University_letter",uniLetterr);
-            hashMap.put("chief_letter", chiefLetterr);
 
-            databaseReference.child("Approve payments").child(id).updateChildren(hashMap)
+            hashMap.put("Participant_no", phone_number);
+            hashMap.put("Amount", amount);
+
+
+            databaseReference.child("ApprovePayments").child(id).updateChildren(hashMap)
                     .addOnCompleteListener(
                     new OnCompleteListener<Void>() {
                         @Override
@@ -170,11 +134,7 @@ public class Payment extends AppCompatActivity implements View.OnClickListener {
         }
     }
 
-    private void deleteStudent(String id) {
-        DatabaseReference drStudent = FirebaseDatabase.getInstance().getReference("Student").child(studentid);
-        drStudent.removeValue();
 
-    }
 
 
     public void performSTKPush(String phone_number,String amount) {

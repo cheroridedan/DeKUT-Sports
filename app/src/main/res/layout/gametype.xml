@@ -138,7 +138,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
             android:layout_marginLeft="0dp"
+            android:focusable="false"
             android:orientation="horizontal">
 
             <Button
@@ -147,9 +149,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Join"
+                android:focusable="false"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
-                android:textStyle="bold" />
+                />
 
             <Button
                 android:id="@+id/btnPay"
@@ -158,7 +161,7 @@
                 android:text="Pay"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
-                android:textStyle="bold" />
+                />
 
         </LinearLayout>
 

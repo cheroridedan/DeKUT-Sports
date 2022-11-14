@@ -103,7 +103,7 @@ public class AdminActivity extends AppCompatActivity implements View.OnClickList
                 break;
 
             case R.id.report:
-                intent = new Intent(AdminActivity.this,QueryEnrolled.class);
+                intent = new Intent(AdminActivity.this,Report.class);
                 startActivity(intent);
                 break;
 

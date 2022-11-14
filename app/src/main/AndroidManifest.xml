@@ -17,13 +17,16 @@
         tools:replace="android:icon"
         tools:targetApi="33">
         <activity
+            android:name=".JoinedUsers"
+            android:exported="false" />
+        <activity
             android:name=".activities.Payment"
             android:exported="false" />
         <activity
             android:name=".activities.RecreationalActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.QueryEnrolled"
+            android:name=".activities.Report"
             android:exported="false" />
         <activity
             android:name=".activities.VolleyballActivity"

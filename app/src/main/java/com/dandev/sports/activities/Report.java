@@ -31,8 +31,8 @@ public class Report extends AppCompatActivity implements View.OnClickListener {
 
         switch (v.getId()){
             case R.id.enrolled:
-//                intent = new Intent(Report.this,JoinedUsers.class);
-//                startActivity(intent);
+                intent = new Intent(Report.this,EnrolledUsersList.class);
+                startActivity(intent);
                 break;
 
             default:break;

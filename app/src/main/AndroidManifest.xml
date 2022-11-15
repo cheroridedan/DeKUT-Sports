@@ -17,8 +17,9 @@
         tools:replace="android:icon"
         tools:targetApi="33">
         <activity
-            android:name=".JoinedUsers"
+            android:name=".activities.EnrolledUsersList"
             android:exported="false" />
+
         <activity
             android:name=".activities.Payment"
             android:exported="false" />
